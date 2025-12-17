@@ -1,0 +1,141 @@
+java notes
+What is Java?
+Java is a popular and powerful programming language, created in 1995.
+
+It is owned by Oracle, and more than 3 billion devices run Java.
+
+It is used for:
+
+Mobile applications (specially Android apps)
+Desktop applications
+Web applications
+Web servers and application servers
+Games
+Database connection
+And much, much more!
+Why Use Java?
+Java works on different platforms (Windows, Mac, Linux, Raspberry Pi, etc.)
+It is one of the most popular programming languages in the world
+It has a large demand in the current job market
+It is easy to learn and simple to use
+It is open-source and free
+It is secure, fast and powerful
+It has huge community support (tens of millions of developers)
+Java is an object oriented language which gives a clear structure to programs and allows code to be reused, lowering development costs
+As Java is close to C++ and C#, it makes it easy for programmers to switch to Java or vice versa
+to heck java in cmd>java -version
+now open the folder in cmd and write 'javac Main.java(file name)' to compile the main file
+and "java Main" to run file
+Every line of code that runs in Java must be inside a class. The class name should always start with an uppercase first letter.
+Java uses the class name to find and run your code. System is a built-in Java class.
+out is a member of System, short for "output".
+println() is a method, short for "print line".
+Finally, remember that each Java statement must end with a semicolon (;).
+It's up to you which one you use. Normally, we use // for short comments, and /* */ for longer.
+If you don't want others (or yourself) to overwrite existing values, use the final keyword (this will declare the variable as "final" or "constant", which means unchangeable and read-only):
+
+Example
+final int myNum = 15;
+myNum = 20;  // will generate an error: cannot assign a value to a final variable
+Be careful when combining text and numbers in the same line of code. Without parentheses, Java will treat the numbers as text after the first string:
+
+Example
+int x = 5;
+int y = 6;
+
+System.out.println("The sum is " + x + y);   // Prints: The sum is 56
+System.out.println("The sum is " + (x + y)); // Prints: The sum is 11
+A primitive data type specifies the type of a variable and the kind of values it can hold.
+
+There are eight primitive data types in Java:
+
+Data Type	Description
+byte	Stores whole numbers from -128 to 127
+short	Stores whole numbers from -32,768 to 32,767
+int	Stores whole numbers from -2,147,483,648 to 2,147,483,647
+long	Stores whole numbers from -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+float	Stores fractional numbers. Sufficient for storing 6 to 7 decimal digits
+double	Stores fractional numbers. Sufficient for storing 15 to 16 decimal digits
+boolean	Stores true or false values
+char	Stores a single character/letter or ASCII values
+The long data type can store whole numbers from -9223372036854775808 to 9223372036854775807. This is used when int is not large enough to store the value. Note that you should end the value with an "L":
+
+Example
+long myNum = 15000000000L;
+System.out.println(myNum);
+The float and double data types can store fractional numbers. Note that you should end the value with an "f" for floats and "d" for doubles:
+
+Float Example
+float myNum = 5.75f;
+System.out.println(myNum);
+
+Double Example
+double myNum = 19.99d;
+System.out.println(myNum);
+The precision of a floating point value indicates how many digits the value can have after the decimal point. The precision of float is only 6-7 decimal digits, while double variables have a precision of about 16 digits.
+
+Therefore it is safer to use double for most calculations.
+A floating point number can also be a scientific number with an "e" to indicate the power of 10:
+
+Example
+float f1 = 35e3f;
+double d1 = 12E4d;
+System.out.println(f1);
+System.out.println(d1);
+Alternatively, if you are familiar with ASCII values, you can use those to display certain characters:
+
+Example
+char myVar1 = 65, myVar2 = 66, myVar3 = 67;
+System.out.println(myVar1);
+System.out.println(myVar2);
+System.out.println(myVar3);
+The main differences between primitive and non-primitive data types are:
+
+Primitive types in Java are predefined and built into the language, while non-primitive types are created by the programmer (except for String).
+Non-primitive types can be used to call methods to perform certain operations, whereas primitive types cannot.
+Primitive types start with a lowercase letter (like int), while non-primitive types typically starts with an uppercase letter (like String).
+Primitive types always hold a value, whereas non-primitive types can be null.
+Examples of non-primitive types are Strings, Arrays, Classes etc.
+The var Keyword
+The var keyword was introduced in Java 10 (released in 2018).
+
+The var keyword lets the compiler automatically detect the type of a variable based on the value you assign to it.
+
+This helps you write cleaner code and avoid repeating types, especially for long or complex types.
+
+For example, instead of writing int x = 5;, you can write:
+
+ExampleGet your own Java Server
+var x = 5;  // x is an int
+System.out.println(x);
+In Java, there are two main types of casting:
+
+Widening Casting (automatic) - converting a smaller type to a larger type size
+byte -> short -> char -> int -> long -> float -> double
+
+Narrowing Casting (manual) - converting a larger type to a smaller type size
+double -> float -> long -> int -> char -> short -> byte
+Widening Casting
+Widening casting is done automatically when passing a smaller size type into a larger size type.
+
+This works because there is no risk of losing information. For example, an int value can safely fit inside a double:
+
+ExampleGet your own Java Server
+int myInt = 9;
+double myDouble = myInt; // Automatic casting: int to double
+
+System.out.println(myInt);    // Outputs 9
+System.out.println(myDouble); // Outputs 9.0
+
+Narrowing Casting
+Narrowing casting must be done manually by placing the type in parentheses () in front of the value.
+
+This is required because narrowing may result in data loss (for example, dropping decimals when converting a double to an int):
+
+Example
+double myDouble = 9.78d;
+int myInt = (int) myDouble; // Manual casting: double to int
+
+System.out.println(myDouble); // Outputs 9.78
+System.out.println(myInt);    // Outputs 9
+
